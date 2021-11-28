@@ -34,6 +34,7 @@ applesSold = 50
 applePrice = 0.20
 print(applesSold * applePrice)
 print(applesSold + applePrice)
+print('---------------------------------------------')
 
 # + operator used with two strings = string concatenation (combining two strings by appending one to the other)
 x = "Hello"
