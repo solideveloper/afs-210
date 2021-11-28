@@ -21,7 +21,7 @@ def buy2Get1Free(qnty):
      if qnty >= 3:
 	     print("You qualify for the Buy 2 Get 1 Free Discount")
      else:
-     		print("You do not quality for the discount")
+     	print("You do not quality for the discount")
 applesSold = 1
 buy2Get1Free(applesSold)
 applesSold = 3
