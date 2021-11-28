@@ -18,11 +18,19 @@ under the if statement to create block of code.
 
 # >=greater  <=less  , qnty is the parameter here
 def buy2Get1Free(qnty):
-     if qnty >= 3:
+     if qnty >= 6:
 	     print("You qualify for the Buy 2 Get 1 Free Discount")
+# to have more that one else if/else statement we use elif statement. 
+# it must go after the if and before the last else
+     elif (qnty >= 3) and (qnty < 6):
+     	print("You get one Apple for Free!")
      else:
      	print("You do not quality for the discount")
 applesSold = 1
 buy2Get1Free(applesSold)
 applesSold = 3
+buy2Get1Free(applesSold)
+applesSold = 4
+buy2Get1Free(applesSold)
+applesSold = 6
 buy2Get1Free(applesSold)
