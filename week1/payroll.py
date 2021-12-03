@@ -19,7 +19,10 @@ eid = int(input("Employee ID number: "))
 fName = str(input("Employee First Name: "))
 lName = str(input("Employee's Last Name: "))
 hpr = float(input("Employee's Hourly Wage: "))
-totalHrs = float(input("Enter " + fName + " " + lName + " total hours worked: "))
+totalHrs = float(input("Enter " + fName + " " + lName+"\'s" + " total hours worked: "))
 newEmp = Employee(eid,fName,lName,hpr)
 
-print(eid, fName, lName, "paycheck this period is ${2:.2f}".format(str(newEmp.fName()), newEmp.pay(totalHrs)))
+print("Employee No.",eid,fName,lName+"\'s", "paycheck this period is $""{:.2f}".format(newEmp.pay(totalHrs)))
+
+# currency_format = "${:,.2f}".format(yearlySalary)
+# print(currency_format)
