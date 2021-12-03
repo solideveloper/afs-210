@@ -28,6 +28,7 @@ class dog:
         return self.age
     def setAge(self,age):
         self.age = age
+
 dog1 = dog("Lancelot","German Shepherd",2,"brown","large")
 dog2 = dog("Nugget","Poodle",4,"blonde","medium")
 dog3 = dog("Chico","Chihuahua",1,"tan","small")

@@ -1,21 +1,48 @@
-class Employee():
-     global first_name, last_name
-     global last_name
+class Employee:
+     def __init__(self, id=None,first=None, last=None, pay=0.00):
+          self.firstName = first
+          self.lastName = last
+          self.eid = id
+          self.hpr = pay
+
+     def setEid(self, id):
+             self.eid = id
+
+     def getEid(self):
+        return self.eid
      
-     employeeId = input('Enter Employee ID: ')
-     first_name = str(input('Enter Employee  First Name: '))
-     last_name = str(input('Enter Employee Last Name: ' ))
-     hpr = float(input('Enter Employee Hourly Pay Rate: '))
-     hrsTotal= float(input('Enter Employee total hours (with overtime): '))
-     
-     def pay(hrsTotal, hpr,):
-          if(hrsTotal <= 40.0):
-              pay = float(hrsTotal * hpr)
-              return print(first_name + " " + last_name + "\'s" + " paycheck is $" + str(pay) + " for " + str(hrsTotal) + " Regular Hours.")
-          elif(hrsTotal > 40.0):
-               reg_pay = float(hrsTotal * hpr)
-               overtime = float(hrsTotal - 40.0)
-               ot_pay = float(overtime * (hpr * 0.5))
-               paycheck = float(reg_pay + ot_pay)
-               return print(first_name + " " + last_name + "\'s" + " paycheck is $" + str(paycheck) + ' with 40.0 Regular Hours, and ' + str(overtime) + ' hours of Overtime.')
-     pay(hrsTotal, hpr)
+     def setFname(self, first):
+        self.firstName = first
+
+     def getFname(self):
+        return self.firstName
+
+     def setLname(self, last):
+        self.lastName = last
+
+     def getLname(self):
+        return self.lastName
+    
+     def setHpr(self, pay):
+        self.hpr = pay
+
+     def getHpr(self):
+        return self.hpr
+
+     def pay(self, totalHrs):
+        if(totalHrs <= 40.0):
+            return self.hpr * totalHrs
+        else: 
+            wkPay = self.hpr * 40
+            wkPay += (self.hpr * 1.5) * (totalHrs - 40)
+            return wkPay    
+
+eid = int(input("Employee ID number: "))
+fName = str(input("Employee First Name: "))
+lName = str(input("Employee's Last Name: "))
+hpr = float(input("Employee's Hourly Wage: "))
+totalHrs = float(input("Enter " + fName + " " + lName + " total hours worked: "))
+
+newEmp = Employee(eid,fName,lName,hpr)
+paycheck = newEmp.pay(totalHrs)
+print("{0} {1}'s paycheck this period is ${2:.2f}".format(newEmp.getFname(),newEmp.getLname(),paycheck))
