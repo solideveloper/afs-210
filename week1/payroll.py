@@ -4,8 +4,6 @@ class Employee:
           self.lName = lName
           self.eid = eid
           self.hpr = hpr
-
-
      def pay(self, totalHrs):
           self.totalHrs = totalHrs
           if totalHrs <= 40.0:
