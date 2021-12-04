@@ -28,7 +28,6 @@ print(Data2)
 Data2.add("Alpha")
 #print data set
 print(Data2)
-
 #List
 Data3 = ["A", 7, -1, 3.14, True, 7]
 #Print the data set in reverse order
