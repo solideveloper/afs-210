@@ -64,7 +64,7 @@ class DoublyLinkedList:
         if(index == self.count):
             self.addLast(newNode)    
         if(index > self.count):
-            print("index does not exist")
+            return
         else:
             current = self.head
             for _ in range(index):  #underscore _ denotes a “discarded” value. “Discarded” meaning that you don’t intend to use the loop counter value within the loop, so you don’t declare a variable.
@@ -171,26 +171,28 @@ class DoublyLinkedList:
     def __str__(self):
         myStr = ""
         for node in self.iter():
-             myStr += str(node)+ " "
+            myStr += str(node)+ " "
         return myStr
 
 items = DoublyLinkedList()
 items.addFirst("May")
-items.add("the")
-items.add("force")
-items.add("be")
-items.add("with")
-items.add("you")
+items.add("The")
+items.add("Force")
+items.add("Be")
+items.add("With")
+items.add("You")
 items.add("!")
 print (items)
 
-items.indexOf("with")
-x = items.indexOf("you")
-items.delete("you")
-items.addAtIndex("us", x)
-x = items.indexOf("!")
-items.addAtIndex("all", x-1)
+items.indexOf("With")
+x = items.indexOf("You")
+items.delete("You")
+items.addAtIndex("Us", x-2)
+items.addAtIndex("All", x-1)
 print(items)
+
+
+
 
 
 
