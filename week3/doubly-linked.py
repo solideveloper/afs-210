@@ -69,33 +69,23 @@ class DoublyLinkedList:
             current = self.head
             for _ in range(index):  #underscore _ denotes a “discarded” value. “Discarded” meaning that you don’t intend to use the loop counter value within the loop, so you don’t declare a variable.
                 current = current.next
-                
             newNode.next = current.next
             newNode.prev = current
             if current.next:
                 current.next.prev = newNode
             current.next = newNode
             self.count += 1 
-
-
+            
     def indexOf(self, data):
-        search = self.head
-        result = 0
-        i = 0
-        if(search != None): #search only if list has items
-            while(search != None): #while searching
-                i+=1 #add 1
-                if(search.data == data): #if search returns data
-                    result+=1 # include result 
-                    break
-                search = search.next 
-            if(result == 1):
-                return i
-            else:
-                return -1
-        else: #if list doesnt have items
-            return -1 
-
+        pos = -1
+        curr = self.head
+        while curr:
+            pos += 1
+            if (curr.data == data):
+                return pos
+            curr = curr.next
+        return -1
+    
     def add(self, data) -> None:
         # Append an item to the end of the list
         self.addLast(data)
@@ -108,13 +98,10 @@ class DoublyLinkedList:
 
     def deleteAtIndex(self, index) -> None:
         # Delete the node at the index-th in the linked list, if the index is valid.
-
         if (index > (self.count-1)):
             return
-            
         curr = self.head
         prev = self.head
-
         for n in range(index):
             prev = curr
             curr = curr.next
@@ -122,14 +109,12 @@ class DoublyLinkedList:
         prev.next = curr.next
         curr.prev = prev
         self.count -= 1
-
         if (curr == self.head):
             self.head = curr.next
             curr.prev = None
         elif (curr == self.tail):
             prev.next = None
             self.tail = prev       
-
         return
 
     def delete(self, data) -> None:
@@ -184,11 +169,11 @@ items.add("You")
 items.add("!")
 print (items)
 
-items.indexOf("With")
+print(items.indexOf("With"))
 x = items.indexOf("You")
 items.delete("You")
-items.addAtIndex("Us", x-2)
-items.addAtIndex("All", x-1)
+items.addAtIndex("Us", x-1)
+items.addAtIndex("All", x)
 print(items)
 
 
