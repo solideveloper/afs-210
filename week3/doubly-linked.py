@@ -5,6 +5,7 @@ class Node:
         self.next = None
         self.prev = None
 
+
 class DoublyLinkedList:
     # A doubly-linked list.
     def __init__(self):
@@ -21,7 +22,6 @@ class DoublyLinkedList:
             current = current.next
             yield val
 
-
     def size(self) -> int:
         return self.length()
 
@@ -29,18 +29,16 @@ class DoublyLinkedList:
         # Returns the number of elements in the list
         return self.count
 
-
     def addFirst(self, data) -> None:
         newNode = Node(data)
         self.count += 1
         if (self.head == None):
             self.head = newNode
             self.tail = newNode
-        else: 
+        else:
             newNode.next = self.head
-            self.head.prev = newNode 
+            self.head.prev = newNode
             self.head = newNode
-
 
     def addLast(self, data) -> None:
         node = Node(data)
@@ -52,7 +50,7 @@ class DoublyLinkedList:
             node.prev = self.tail
             self.tail.next = node
             self.tail = node
-  
+
     # Add a node to the list at the given index position
     # If index equals to the length of linked list, the node will be appended to the end of linked list
     # If index is greater than the length, the data will not be inserted.
@@ -62,20 +60,21 @@ class DoublyLinkedList:
         if(index == 0):
             self.addFirst(newNode)
         if(index == self.count):
-            self.addLast(newNode)    
+            self.addLast(newNode)
         if(index > self.count):
             return
         else:
             current = self.head
-            for _ in range(index):  #underscore _ denotes a “discarded” value. “Discarded” meaning that you don’t intend to use the loop counter value within the loop, so you don’t declare a variable.
+            # underscore _ denotes a “discarded” value. “Discarded” meaning that you don’t intend to use the loop counter value within the loop, so you don’t declare a variable.
+            for _ in range(index):
                 current = current.next
             newNode.next = current.next
             newNode.prev = current
             if current.next:
                 current.next.prev = newNode
             current.next = newNode
-            self.count += 1 
-            
+            self.count += 1
+
     def indexOf(self, data):
         pos = -1
         curr = self.head
@@ -85,7 +84,7 @@ class DoublyLinkedList:
                 return pos
             curr = curr.next
         return -1
-    
+
     def add(self, data) -> None:
         # Append an item to the end of the list
         self.addLast(data)
@@ -105,7 +104,7 @@ class DoublyLinkedList:
         for n in range(index):
             prev = curr
             curr = curr.next
-            
+
         prev.next = curr.next
         curr.prev = prev
         self.count -= 1
@@ -114,7 +113,7 @@ class DoublyLinkedList:
             curr.prev = None
         elif (curr == self.tail):
             prev.next = None
-            self.tail = prev       
+            self.tail = prev
         return
 
     def delete(self, data) -> None:
@@ -156,8 +155,9 @@ class DoublyLinkedList:
     def __str__(self):
         myStr = ""
         for node in self.iter():
-            myStr += str(node)+ " "
+            myStr += str(node) + " "
         return myStr
+
 
 items = DoublyLinkedList()
 items.addFirst("May")
@@ -167,7 +167,7 @@ items.add("Be")
 items.add("With")
 items.add("You")
 items.add("!")
-print (items)
+print(items)
 
 print(items.indexOf("With"))
 x = items.indexOf("You")
@@ -175,10 +175,3 @@ items.delete("You")
 items.addAtIndex("Us", x-1)
 items.addAtIndex("All", x)
 print(items)
-
-
-
-
-
-
-
