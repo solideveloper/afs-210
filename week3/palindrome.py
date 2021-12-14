@@ -32,7 +32,7 @@ class Queue:
           data = self.kew.pop()
           return data
      def size(self) -> int:
-          return self.length()
+          return len(self.kew)
      def isEmpty (self):
           if(len(self.kew) <= 0): 
                return True
@@ -57,10 +57,37 @@ def isPalindrome (data) :
                stac.pop()
                kew.dequeue()
           else: 
-               return True
-     return False
+               return False
+     return True
 
 print(isPalindrome('racecar'))
 print(isPalindrome('noon'))
 print(isPalindrome('python'))
 print(isPalindrome('madam'))
+
+
+
+#Test:
+# myStack = Stack()
+# myStack.push('p')
+# myStack.push('y')
+# myStack.push('t')
+# myStack.push('h')
+# myStack.push('o')
+# myStack.push('n')
+
+# print(myStack.size())
+# print(myStack.peek())
+# print(myStack.pop())
+
+# myQueue = Queue()
+# myQueue.enqueue('p')
+# myQueue.enqueue('y')
+# myQueue.enqueue('t')
+# myQueue.enqueue('h')
+# myQueue.enqueue('o')
+# myQueue.enqueue('n')
+
+# print(myQueue.size())
+# print(myQueue.peek())
+# print(myQueue.pop())
