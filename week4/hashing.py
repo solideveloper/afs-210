@@ -40,12 +40,14 @@ class HashTable:
             if self.slots[valueOfHash] == key:
                 self.data[valueOfHash] = data
             # when slot is occupied & has same value = Collision and need to reshash:
-            valueOfHash = self.rehash(key)
-            if self.data[valueOfHash] == None:
-                self.data[valueOfHash] = data
-                self.slots[valueOfHash] = key
-            else: 
-                return None
+            
+            else:
+                valueOfHash = self.rehash(key)
+                if self.data[valueOfHash] == None:
+                    self.data[valueOfHash] = data
+                    self.slots[valueOfHash] = key
+                else: 
+                    return None
     def get(self,key):
         #if slot matches your key then get that value and return the data
         # otherwise rehash and return the data
@@ -54,7 +56,10 @@ class HashTable:
         # Insert your code here to get data by key
 
     def __getitem__ (self,key):
-        return self.get(key)
+        valueOfHash = self.hashfunction(key)
+        while self.slots[valueOfHash] is not None:
+            if self.slots[valueOfHash] is key:
+                return self.data[valueOfHash]
 
     def __setitem__ (self,key,data):
         self.put(key,data)
@@ -79,4 +84,5 @@ print(H.data)
 # print the value for key 52
 print(H[52])
 
-
+print(H[80])
+print(H[70])
