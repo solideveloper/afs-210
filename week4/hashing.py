@@ -84,5 +84,6 @@ print(H.data)
 # print the value for key 52
 print(H[52])
 
-print(H[80])
-print(H[70])
+# Testing:
+# print(H[80])
+# print(H[70])
