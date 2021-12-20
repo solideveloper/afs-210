@@ -51,15 +51,23 @@ class HashTable:
     def get(self,key):
         #if slot matches your key then get that value and return the data
         # otherwise rehash and return the data
-        valueOfhash = self.hashfunction(key)
-        return self.data[valueOfhash]
-        # Insert your code here to get data by key
-
-    def __getitem__ (self,key):
         valueOfHash = self.hashfunction(key)
-        while self.slots[valueOfHash] is not None:
-            if self.slots[valueOfHash] is key:
+        if self.slots[valueOfHash] == key:
+            return self.data[valueOfHash]
+        else:
+            valueOfHash =self.rehash(key)
+            if self.slots[valueOfHash] == key:
                 return self.data[valueOfHash]
+            else:
+                return None
+        # Insert your code here to get data by key
+        # while self.slots[valueOfHash] is not None:
+        #         if self.slots[valueOfHash] is key:
+        #             return self.data[valueOfHash]
+    
+    def __getitem__ (self,key):
+        return self.get(key)
+    
 
     def __setitem__ (self,key,data):
         self.put(key,data)
