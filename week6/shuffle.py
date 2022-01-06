@@ -19,8 +19,6 @@ print(shuffleAlgorithm(data,ndata))
 print(shuffleAlgorithm(data,ndata))
 print(shuffleAlgorithm(data,ndata))
 
-
-
 # fisher yates algorithm - O(n) time complexity because i'm not creating a copy of the list to shuffle through it. 
 # instead i'm modifying the list in place or at a 'constant space' making it O(n)
 # swapping the last item with a random -not previously selected- item and repeating until all items in list have been selected
