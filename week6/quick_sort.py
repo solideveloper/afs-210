@@ -15,7 +15,6 @@ def quick_sort(a_list, start, end):
     # pivot = partitionEnd(a_list, start, end)
     # pivot = partitionRandom(a_list, start, end)
     
-    
     quick_sort(a_list, start, pivot-1)
     quick_sort(a_list, pivot+1, end)
         
@@ -26,7 +25,6 @@ def partitionStart(a_list, start, end):   #first element
 #execution time is: 0.001455068588256836
 #execution time is: 0.0015239715576171875
 #execution time is: 0.0010809898376464844
-
 
 def partitionSecond(a_list, start, end):
     #swap first and second elements on list
@@ -44,7 +42,6 @@ def partitionMiddle(a_list, start, end):
 #execution time is: 0.016835927963256836
 #execution time is: 0.016835927963256836
 #execution time is: 0.014004945755004883
-
 
 def partitionSecondLast(a_list, start, end):
     a_list[end], a_list[end-1] = a_list[end-1], a_list[end]
