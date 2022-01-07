@@ -18,7 +18,6 @@ def quick_sort(a_list, start, end):
     quick_sort(a_list, start, pivot-1)
     quick_sort(a_list, pivot+1, end)
         
-
 def partitionStart(a_list, start, end):   #first element
     #select the first value on list
     return partition(a_list, start, end)
