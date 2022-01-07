@@ -9,7 +9,7 @@ import random
 
 def shuffleAlgorithm(data, ndata):
     for i in range(ndata-1, 0, -1):
-        r = random.randint(0, i +1)
+        r = random.randint(0, i)
         data[i], data[r] = data[r], data[i]
     return data 
 
