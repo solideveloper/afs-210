@@ -25,37 +25,37 @@ class Stack:
           
 class Queue:
      def __init__ (self):
-          self.kew = []
+          self.que = []
      def enqueue(self, data):  #add to queue
-          self.kew.insert(0, data)
+          self.que.insert(0, data)
      def dequeue(self):  #remove from queue
-          data = self.kew.pop()
+          data = self.que.pop()
           return data
      def size(self) -> int:
-          return len(self.kew)
+          return len(self.que)
      def isEmpty (self):
-          if(len(self.kew) <= 0): 
+          if(len(self.que) <= 0): 
                return True
           else: 
                return False
      def peek(self):
-          if(len(self.kew) > 0):
-               return self.kew[-1]
+          if(len(self.que) > 0):
+               return self.que[-1]
           else:
                return None
           
 def isPalindrome (data) :
      stac = Stack()
-     kew = Queue()
+     que = Queue()
      for sPeek in data:
           stac.push(sPeek)
-          kew.enqueue(sPeek)
+          que.enqueue(sPeek)
      while stac.isEmpty() == False: 
           sPeek = stac.peek()
-          qPeek = kew.peek()
+          qPeek = que.peek()
           if(sPeek == qPeek):
                stac.pop()
-               kew.dequeue()
+               que.dequeue()
           else: 
                return False
      return True
