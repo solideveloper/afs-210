@@ -1,5 +1,6 @@
 import random
 
+"""Using a QUEUE structure for this assignment"""
 class Song():
     def __init__(self, title, artist):
         self.title = title
@@ -106,8 +107,7 @@ class SongQue:
             self.play(prev_song)
         else:
             print('\nNothing is Playing!')
-            
-            
+             
     """ 6. Randomly shuffle the song list. Create your own algorithm to randomly sort the data structure you have chosen to use.  
         This algorithm does not need to be efficient. """
     def shuffle(self):
